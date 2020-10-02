@@ -14,24 +14,19 @@
                         <small>Super Admin</small>
                     </div>
                 </div>
-            </li>            
-            <li class="{{ Request::segment(1) === 'dashboard' ? 'active open' : null }}"><a href="{{route('dashboard.index')}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('profile.my-profile')}}"><i class="zmdi zmdi-account"></i><span>My Profile</span></a></li>
-            <li class="{{ Request::segment(1) === 'app' ? 'active open' : null }}">
-                <a href="#App" class="menu-toggle"><i class="zmdi zmdi-apps"></i> <span>App</span></a>
-                <ul class="ml-menu">
-                    <li class="{{ Request::segment(2) === 'inbox' ? 'active' : null }}"><a href="{{route('app.inbox')}}">Inbox</a></li>
-                    <li class="{{ Request::segment(2) === 'chat' ? 'active' : null }}"><a href="{{route('app.chat')}}">Chat</a></li>
-                    <li class="{{ Request::segment(2) === 'calendar' ? 'active' : null }}"><a href="{{route('app.calendar')}}">Calendar</a></li>                                    
-                    <li class="{{ Request::segment(2) === 'contact-list' ? 'active' : null }}"><a href="{{route('app.contact-list')}}">Contact list</a></li>
-                </ul>
             </li>
+            <!--li class="{{--Request::segment(1) === 'dashboard' ? 'active open' : null --}}"><a href="{{--route('dashboard.index')--}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li-->
+            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('offres.index')}}"><i class="zmdi zmdi-home"></i><span>Offres</span></a></li>
+            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('users.index')}}"><i class="zmdi zmdi-account"></i><span>Utilisateurs</span></a></li>
+            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('profile.my-profile')}}"><i class="zmdi zmdi-power"></i><span>Déconnecter</span></a></li>
+
+
             <li class="{{ Request::segment(1) === 'project' ? 'active open' : null }}">
                 <a href="#Project" class="menu-toggle"><i class="zmdi zmdi-assignment"></i> <span>Project</span></a>
                 <ul class="ml-menu">
                     <li class="{{ Request::segment(2) === 'project-list' ? 'active' : null }}"><a href="{{route('project.project-list')}}">Project List</a></li>
                     <li class="{{ Request::segment(2) === 'taskboard' ? 'active' : null }}"><a href="{{route('project.taskboard')}}">Taskboard</a></li>
-                    <li class="{{ Request::segment(2) === 'ticket-list' ? 'active' : null }}"><a href="{{route('project.ticket-list')}}">Ticket List</a></li>                                    
+                    <li class="{{ Request::segment(2) === 'ticket-list' ? 'active' : null }}"><a href="{{route('project.ticket-list')}}">Ticket List</a></li>
                     <li class="{{ Request::segment(2) === 'ticket-detail' ? 'active' : null }}"><a href="{{route('project.ticket-detail')}}">Ticket Detail</a></li>
                 </ul>
             </li>
