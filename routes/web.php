@@ -23,14 +23,6 @@ Route::get('dashboard/index', 'DashboardController@index')->name('dashboard.inde
 Route::get('profile', function () { return redirect('profile/my-profile'); });
 Route::get('profile/my-profile', 'ProfileController@myProfile')->name('profile.my-profile');
 
-/* App */
-Route::get('app', function () { return redirect('app/inbox'); });
-Route::get('app/inbox', 'AppController@inbox')->name('app.inbox');
-Route::get('app/compose', 'AppController@compose')->name('app.compose');
-Route::get('app/single', 'AppController@single')->name('app.single');
-Route::get('app/chat', 'AppController@chat')->name('app.chat');
-Route::get('app/calendar', 'AppController@calendar')->name('app.calendar');
-Route::get('app/contact-list', 'AppController@contactList')->name('app.contact-list');
 
 /* Project */
 Route::get('project', function () { return redirect('project/project-list'); });
@@ -143,3 +135,13 @@ Route::get('pages/timeline', 'PagesController@timeline')->name('pages.timeline')
 Route::get('map', function () { return redirect('map/google'); });
 Route::get('map/yandex', 'MapController@yandex')->name('map.yandex');
 Route::get('map/jvector', 'MapController@jvector')->name('map.jvector');
+
+/* Offres */
+Route::get('offres', function (){ return view('offres.index'); })->name('offres.index');
+Route::get('offres/create', function (){ return view('offres.create'); })->name('offres.create');
+Route::get('offres/edite', function (){ return view('offres.edite'); })->name('offres.edite');
+
+/* Users */
+Route::get('users', function (){ return view('users.index'); })->name('users.index');
+Route::get('users/create', function (){ return view('users.create'); })->name('users.create');
+Route::get('users/edite', function (){ return view('users.edite'); })->name('users.edite');

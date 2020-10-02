@@ -11,7 +11,7 @@
         <meta name="author" content="@yield('meta_author', config('app.name'))">
         @yield('meta')
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
-        @stack('before-styles')        
+        @stack('before-styles')
         <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
         @if (trim($__env->yieldContent('page-style')))
             @yield('page-style')
@@ -20,9 +20,9 @@
         <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
         @stack('after-styles')
     </head>
-    <?php 
+    <?php
         $setting = !empty($_GET['theme']) ? $_GET['theme'] : '';
-        $theme = "theme-blush";
+        $theme = "theme-blush right_icon_toggle";
         $menu = "";
         if ($setting == 'p') {
             $theme = "theme-purple";
@@ -35,7 +35,7 @@
         } else if ($setting == 'bl') {
             $theme = "theme-cyan";
         } else {
-            $theme = "theme-blush";
+            $theme = "theme-blush right_icon_toggle";
         }
 
         if (Request::segment(2) === 'rtl' ){
@@ -47,12 +47,12 @@
         <div class="page-loader-wrapper">
             <div class="loader">
                 <div class="m-t-30"><img class="zmdi-hc-spin" src="../assets/images/logo.svg" width="48" height="48" alt="Aero"></div>
-                <p>Please wait...</p>        
+                <p>Please wait...</p>
             </div>
         </div>
         <!-- Overlay For Sidebars -->
         <div class="overlay"></div>
-        @include('layout.navbarright')
+        {{--@include('layout.navbarright') --}}
         @include('layout.sidebar')
         @include('layout.rightsidebar')
         <section class="content">
@@ -70,20 +70,20 @@
                             @endif
                         </ul>
                         <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
-                    </div>            
+                    </div>
                     <div class="col-lg-5 col-md-6 col-sm-12">
-                        <button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button>
+                        <!--button class="btn btn-primary btn-icon float-right right_icon_toggle_btn" type="button"><i class="zmdi zmdi-arrow-right"></i></button-->
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">                
+            <div class="container-fluid">
                 @yield('content')
             </div>
         </section>
         @yield('modal')
         <!-- Scripts -->
         @stack('before-scripts')
-        <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>    
+        <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
         <script src="{{ asset('assets/bundles/vendorscripts.bundle.js') }}"></script>
 
         <script src="{{ asset('assets/bundles/mainscripts.bundle.js') }}"></script>
