@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -47,4 +49,24 @@ class User extends Authenticatable
             return true;
         }return false;
     }
+    public static function newUser($name,$prenom,$login,$password,$role)
+    {
+        $admin_role =  Role::where('nom',$role)->first();
+        DB::table('users')->insert([
+            'name' => $name,
+            'prenom' => $prenom,
+            'login' => $login,
+            'password' => Hash::make($password),
+
+        ]);
+        $user = User::where('login',$login)->first();
+        $user->roles()->attach($admin_role);
+    }
+    public function sales()
+    {
+     return $this->hasMany(sale::class);
+    }
+
+
+
 }

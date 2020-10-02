@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $admin_role =  Role::where('name','Admin')->first();
+        $admin_role =  Role::where('nom','Admin')->first();
         DB::table('users')->insert([
             'name' => 'Fouzia',
             'email' => 'admin@admin.com',
