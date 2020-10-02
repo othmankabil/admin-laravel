@@ -142,6 +142,6 @@ Route::get('offres/create', function (){ return view('offres.create'); })->name(
 Route::get('offres/edite', function (){ return view('offres.edite'); })->name('offres.edite');
 
 /* Users */
-Route::get('users', function (){ return view('users.index'); })->name('users.index');
-Route::get('users/create', function (){ return view('users.create'); })->name('users.create');
-Route::get('users/edite', function (){ return view('users.edite'); })->name('users.edite');
+Route::resource('users','UsersController');
+Route::get('users/{user}/delete','UsersController@delete')->name('users.delete');
+

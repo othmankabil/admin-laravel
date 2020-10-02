@@ -12,14 +12,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $admin_role =  Role::where('nom','Admin')->first();
+        $admin_role =  Role::where('nom','admin')->first();
         DB::table('users')->insert([
             'name' => 'Fouzia',
-            'email' => 'admin@admin.com',
+            'prenom' => '',
+            'login' => 'fouzia@admin.com',
             'password' => bcrypt('adminadmin'),
 
         ]);
-        $user = User::where('email','admin@admin.com')->first();
+        $user = User::where('login','fouzia@admin.com')->first();
         $user->roles()->attach($admin_role);
     }
 }

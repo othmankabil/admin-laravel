@@ -11,12 +11,12 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'nom' => 'admin'
-        ],[
-            'nom' => 'utilisateur'
-            ]
+        $role = new  \App\Role;
+        $role->nom = 'admin';
+        $role->save();
 
-        );
+        $role = new  \App\Role;
+        $role->nom = 'utilisateur';
+        $role->save();
     }
 }

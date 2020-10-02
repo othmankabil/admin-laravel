@@ -23,7 +23,15 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                            @foreach(\App\User::all() as $user)
+                            <tr>
+                                <th scope="row">{{$user->id}}</th>
+                                <td>{{$user->nom}}</td>
+                                <td>{{$user->prenom}}</td>
+                                <td>{{$user->login}}</td>
+                                <td><a href="{{route('users.delete',$user->id)}}"><span class="badge badge-danger badge-pill">x</span></a></td>
+                            </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
