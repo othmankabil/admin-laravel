@@ -85,7 +85,10 @@ class UsersController extends Controller
     }
     public function delete(User $user)
     {
-        $user->roles()->delete();
+        foreach ($user->roles as $role)
+        {
+            $role->pivot->delete();
+        }
         $user->delete();
         return redirect(route('users.index'));
     }

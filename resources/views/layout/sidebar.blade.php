@@ -7,14 +7,17 @@
     <div class="menu">
         <ul class="list">
             <li>
-                <div class="user-info">
-                    <div class="detail">
-                        @if(\Illuminate\Support\Facades\Auth::check())
-                        <h4>{{\Illuminate\Support\Facades\Auth::user()->nom.' '.\Illuminate\Support\Facades\Auth::user()->prenom}}</h4>
-                        <small>{{\Illuminate\Support\Facades\Auth::user()->getRole()}}</small>
-                        @endif
+                <div >
+                    <div class="user-info ">
+                        <div class="detail ">
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                                <h4><strong class="text-primary">{{\Illuminate\Support\Facades\Auth::user()->nom.' '.\Illuminate\Support\Facades\Auth::user()->prenom}}</strong></h4>
+                                <bold><p class="text-danger text-capitalize">{{\Illuminate\Support\Facades\Auth::user()->getRole()}}</p></bold>
+                            @endif
+                        </div>
                     </div>
                 </div>
+
             </li>
             <!--li class="{{--Request::segment(1) === 'dashboard' ? 'active open' : null --}}"><a href="{{--route('dashboard.index')--}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li-->
             <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('sales.index')}}"><i class="zmdi zmdi-home"></i><span>Offres</span></a></li>
