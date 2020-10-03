@@ -2,14 +2,17 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
+
     use Notifiable;
 
     /**
@@ -18,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nom', 'prenom', 'login', 'password','created_at','updated_at'
     ];
 
     /**
@@ -53,20 +56,23 @@ class User extends Authenticatable
     {
         $admin_role =  Role::where('nom',$role)->first();
         DB::table('users')->insert([
-            'name' => $name,
+            'nom' => $name,
             'prenom' => $prenom,
             'login' => $login,
             'password' => Hash::make($password),
+            "created_at" =>  Carbon::now('Africa/Algiers'),
+            "updated_at" => Carbon::now('Africa/Algiers'),
 
         ]);
         $user = User::where('login',$login)->first();
+
         $user->roles()->attach($admin_role);
     }
     public function sales()
     {
      return $this->hasMany(sale::class);
     }
-
+    public $timestamps = true;
 
 
 }
