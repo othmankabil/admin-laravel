@@ -15,10 +15,11 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>#</th>
+                                <th>#ID</th>
                                 <th>NOM</th>
                                 <th>PRENOM</th>
                                 <th>LOGIN</th>
+                                <th>ROLE</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
@@ -29,7 +30,10 @@
                                 <td>{{$user->nom}}</td>
                                 <td>{{$user->prenom}}</td>
                                 <td>{{$user->login}}</td>
-                                <td><a href="{{route('users.delete',$user->id)}}"><span class="badge badge-danger badge-pill">x</span></a></td>
+                                @foreach($user->roles as $x)
+                                <td>{{$x->nom}}</td>
+                                @endforeach
+                                <td><a href="{{route('users.delete',$user->id)}}"><span class="badge badge-danger badge-pill">X</span></a></td>
                             </tr>
                             @endforeach
                             </tbody>
