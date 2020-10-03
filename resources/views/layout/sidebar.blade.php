@@ -17,7 +17,7 @@
             </li>
             <!--li class="{{--Request::segment(1) === 'dashboard' ? 'active open' : null --}}"><a href="{{--route('dashboard.index')--}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li-->
             <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('offres.index')}}"><i class="zmdi zmdi-home"></i><span>Offres</span></a></li>
-            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('produit.index')}}"><i class="zmdi zmdi-shopping-cart"></i><span>Produit</span></a></li>
+            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('produits.index')}}"><i class="zmdi zmdi-shopping-cart"></i><span>Produit</span></a></li>
             <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('users.index')}}"><i class="zmdi zmdi-account"></i><span>Utilisateurs</span></a></li>
             <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('profile.my-profile')}}"><i class="zmdi zmdi-power"></i><span>Déconnecter</span></a></li>
 
