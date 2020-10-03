@@ -33,7 +33,7 @@
                                 @foreach($user->roles as $x)
                                 <td>{{$x->nom}}</td>
                                 @endforeach
-                                <td><a href="{{route('users.delete',$user->id)}}"><span class="badge badge-danger badge-pill">X</span></a></td>
+                                <td><a href="{{route('users.delete',$user->id)}}" onclick="return confirm('Are you sure?')"><span class="badge badge-danger badge-pill">X</span></a></td>
                             </tr>
                             @endforeach
                             </tbody>

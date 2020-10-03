@@ -27,7 +27,7 @@
                                     <th scope="row">{{$produit->id}}</th>
                                     <td>{{$produit->nom}}</td>
                                     <td>{{$produit->created_at}}</td>
-                                    <td><a href="{{route('produits.delete',$produit->id)}}"><span class="badge badge-danger badge-pill">X</span></a></td>
+                                    <td><a href="{{route('produits.delete',$produit->id)}}" onclick="return confirm('Are you sure?')"><span class="badge badge-danger badge-pill">X</span></a></td>
                                 </tr>
                             @endforeach
                             </tbody>
