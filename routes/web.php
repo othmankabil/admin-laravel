@@ -13,6 +13,8 @@
 
 // Route::get('/', function () {return view('welcome');});
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () { return redirect('dashboard/index'); });
 
 /* Dashboard */
@@ -111,15 +113,16 @@ Route::get('widgets/app', 'WidgetsController@app')->name('widgets.app');
 Route::get('widgets/data', 'WidgetsController@data')->name('widgets.data');
 
 /* Authentication */
-Route::get('authentication', function () { return redirect('authentication/login'); });
-Route::get('authentication/login', 'AuthenticationController@login')->name('authentication.login');
-Route::get('authentication/register', 'AuthenticationController@register')->name('authentication.register');
-Route::get('authentication/lockscreen', 'AuthenticationController@lockscreen')->name('authentication.lockscreen');
-Route::get('authentication/forgot', 'AuthenticationController@forgot')->name('authentication.forgot');
-Route::get('authentication/page404', 'AuthenticationController@page404')->name('authentication.page404');
-Route::get('authentication/page500', 'AuthenticationController@page500')->name('authentication.page500');
-Route::get('authentication/offline', 'AuthenticationController@offline')->name('authentication.offline');
-
+Route::get('auth', function () { return redirect('auth/login'); });
+Route::get('auth/login', 'AuthenticationController@login')->name('auth.login');
+Route::get('auth/register', 'AuthenticationController@register')->name('auth.register');
+Route::get('auth/lockscreen', 'AuthenticationController@lockscreen')->name('auth.lockscreen');
+Route::get('auth/forgot', 'AuthenticationController@forgot')->name('auth.forgot');
+Route::get('auth/page404', 'AuthenticationController@page404')->name('auth.page404');
+Route::get('auth/page500', 'AuthenticationController@page500')->name('auth.page500');
+Route::get('auth/offline', 'AuthenticationController@offline')->name('auth.offline');
+//Route::post('auth/login/','LoginController@login')->name('login');
+\Illuminate\Support\Facades\Auth::routes();
 /* Pages */
 Route::get('pages', function () { return redirect('pages/blank-page'); });
 Route::get('pages/blank', 'PagesController@blank')->name('pages.blank');
@@ -137,9 +140,8 @@ Route::get('map/yandex', 'MapController@yandex')->name('map.yandex');
 Route::get('map/jvector', 'MapController@jvector')->name('map.jvector');
 
 /* Offres */
-Route::get('offres', function (){ return view('offres.index'); })->name('offres.index');
-Route::get('offres/create', function (){ return view('offres.create'); })->name('offres.create');
-Route::get('offres/edite', function (){ return view('offres.edite'); })->name('offres.edite');
+Route::resource('sales','SalesController');
+Route::get('sales/{sale}/delete','SalesController@delete')->name('sales.delete');
 
 /* Users */
 Route::resource('users','UsersController');

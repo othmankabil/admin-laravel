@@ -47,10 +47,14 @@ class User extends Authenticatable
     }
     public function hasRole($role)
     {
-        if($this->roles()->where('name',$role)->first())
+        if($this->roles()->where('nom',$role)->first())
         {
             return true;
         }return false;
+    }
+    public function getRole()
+    {
+       return  ($this->roles->first()->first()->nom);
     }
     public static function newUser($name,$prenom,$login,$password,$role)
     {

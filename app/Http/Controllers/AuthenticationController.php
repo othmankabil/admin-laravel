@@ -7,30 +7,30 @@ use Illuminate\Routing\Controller as BaseController;
 class AuthenticationController extends BaseController
 {
     function login(){
-    	return view('authentication.login');
+    	return view('auth.login');
     }
 
     function register(){
-    	return view('authentication.register');
+    	return view('auth.register');
     }
 
     function lockscreen(){
-        return view('authentication.lockscreen');
+        return view('auth.lockscreen');
     }
 
     function forgot(){
-    	return view('authentication.forgot');
+    	return view('auth.forgot');
     }
-    
+
     function page404(){
-    	return view('authentication.page404');
+    	return view('auth.page404');
     }
 
     function page500(){
-        return view('authentication.page500');
+        return view('auth.page500');
     }
 
     function offline(){
-    	return view('authentication.offline');
+    	return view('auth.offline');
     }
 }

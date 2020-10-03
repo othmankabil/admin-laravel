@@ -138,7 +138,7 @@
                                     <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
                                         <span class="progress-value">86%</span>
                                     </div>
-                                </div>                        
+                                </div>
                                 <ul class="list-unstyled team-info">
                                     <li class="m-r-15"><small>Team</small></li>
                                     <li>
@@ -149,7 +149,7 @@
                                     </li>
                                     <li>
                                         <img src="../assets/images/xs/avatar4.jpg" alt="Avatar">
-                                    </li>                            
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -199,7 +199,7 @@
                                     </li>
                                     <li>
                                         <img src="../assets/images/xs/avatar7.jpg" alt="Avatar">
-                                    </li>                            
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -211,6 +211,6 @@
         <li><a href="javascript:void(0);" class="app_google_drive" title="Google Drive"><i class="zmdi zmdi-google-drive"></i></a></li>
         <li><a href="javascript:void(0);" class="app_group_work" title="Group Work"><i class="zmdi zmdi-group-work"></i></a></li>
         <li><a href="javascript:void(0);" class="js-right-sidebar" title="Setting"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a></li>
-        <li><a href="{{route('authentication.login')}}" class="mega-menu" title="Sign Out"><i class="zmdi zmdi-power"></i></a></li>
+        <li><a href="{{route('auth.login')}}" class="mega-menu" title="Sign Out"><i class="zmdi zmdi-power"></i></a></li>
     </ul>
 </div>
