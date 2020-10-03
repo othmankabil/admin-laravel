@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('title', 'Modifier Offre')
-@section('parentPageTitle', 'offres')
+@section('parentPageTitle', 'sales')
 @section('page-style')
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-select/css/bootstrap-select.css')}}"/>

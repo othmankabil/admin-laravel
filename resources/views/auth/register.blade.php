@@ -21,12 +21,12 @@
                     <div class="input-group-append">
                         <span class="input-group-text"><i class="zmdi zmdi-email"></i></span>
                     </div>
-                </div>                        
+                </div>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Password">
-                    <div class="input-group-append">                                
+                    <div class="input-group-append">
                         <span class="input-group-text"><i class="zmdi zmdi-lock"></i></span>
-                    </div>                            
+                    </div>
                 </div>
                 <div class="checkbox">
                     <input id="remember_me" type="checkbox">
@@ -34,7 +34,7 @@
                 </div>
                 <a href="{{route('dashboard.index')}}" class="btn btn-primary btn-block waves-effect waves-light">SIGN UP</a>
                 <div class="signin_with mt-3">
-                    <a class="link" href="{{route('authentication.login')}}">You already have a membership?</a>
+                    <a class="link" href="{{route('auth.login')}}">You already have a membership?</a>
                 </div>
             </div>
         </form>

@@ -10,16 +10,22 @@
                 <div class="user-info">
                     <div class="image"><a href="#"><img src="../assets/images/profile_av.jpg" alt="User"></a></div>
                     <div class="detail">
-                        <h4>Michael</h4>
-                        <small>Super Admin</small>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                        <h4>{{\Illuminate\Support\Facades\Auth::user()->nom.' '.\Illuminate\Support\Facades\Auth::user()->prenom}}</h4>
+                        <small>{{\Illuminate\Support\Facades\Auth::user()->getRole()}}</small>
+                        @endif
                     </div>
                 </div>
             </li>
             <!--li class="{{--Request::segment(1) === 'dashboard' ? 'active open' : null --}}"><a href="{{--route('dashboard.index')--}}"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li-->
-            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('offres.index')}}"><i class="zmdi zmdi-home"></i><span>Offres</span></a></li>
+            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('sales.index')}}"><i class="zmdi zmdi-home"></i><span>Offres</span></a></li>
             <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('produits.index')}}"><i class="zmdi zmdi-shopping-cart"></i><span>Produit</span></a></li>
             <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('users.index')}}"><i class="zmdi zmdi-account"></i><span>Utilisateurs</span></a></li>
-            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('profile.my-profile')}}"><i class="zmdi zmdi-power"></i><span>Déconnecter</span></a></li>
+            <li class="{{ Request::segment(1) === 'my-profile' ? 'active open' : null }}"><a href="{{route('logout')}}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();"><i class="zmdi zmdi-power"></i><span>déconnecter</span></a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
 
 
             <li class="{{ Request::segment(1) === 'project' ? 'active open' : null }}">
@@ -128,16 +134,16 @@
                     <li class="{{ Request::segment(2) === 'data' ? 'active' : null }}"><a href="{{route('widgets.data')}}">Data Widgets</a></li>
                 </ul>
             </li>
-            <li class="{{ Request::segment(1) === 'authentication' ? 'active open' : null }}">
+            <li class="{{ Request::segment(1) === 'auth' ? 'active open' : null }}">
                 <a href="#Authentication" class="menu-toggle"><i class="zmdi zmdi-lock"></i><span>Authentication</span></a>
                 <ul class="ml-menu">
-                    <li class="{{ Request::segment(2) === 'login' ? 'active' : null }}"><a href="{{route('authentication.login')}}">Sign In</a></li>
-                    <li class="{{ Request::segment(2) === 'register' ? 'active' : null }}"><a href="{{route('authentication.register')}}">Sign Up</a></li>
-                    <li class="{{ Request::segment(2) === 'lockscreen' ? 'active' : null }}"><a href="{{route('authentication.lockscreen')}}">Locked Screen</a></li>
-                    <li class="{{ Request::segment(2) === 'forgot' ? 'active' : null }}"><a href="{{route('authentication.forgot')}}">Forgot Password</a></li>
-                    <li class="{{ Request::segment(2) === 'page404' ? 'active' : null }}"><a href="{{route('authentication.page404')}}">Page 404</a></li>
-                    <li class="{{ Request::segment(2) === 'page500' ? 'active' : null }}"><a href="{{route('authentication.page500')}}">Page 500</a></li>
-                    <li class="{{ Request::segment(2) === 'offline' ? 'active' : null }}"><a href="{{route('authentication.offline')}}">Page Offline</a></li>
+                    <li class="{{ Request::segment(2) === 'login' ? 'active' : null }}"><a href="{{route('auth.login')}}">Sign In</a></li>
+                    <li class="{{ Request::segment(2) === 'register' ? 'active' : null }}"><a href="{{route('auth.register')}}">Sign Up</a></li>
+                    <li class="{{ Request::segment(2) === 'lockscreen' ? 'active' : null }}"><a href="{{route('auth.lockscreen')}}">Locked Screen</a></li>
+                    <li class="{{ Request::segment(2) === 'forgot' ? 'active' : null }}"><a href="{{route('auth.forgot')}}">Forgot Password</a></li>
+                    <li class="{{ Request::segment(2) === 'page404' ? 'active' : null }}"><a href="{{route('auth.page404')}}">Page 404</a></li>
+                    <li class="{{ Request::segment(2) === 'page500' ? 'active' : null }}"><a href="{{route('auth.page500')}}">Page 500</a></li>
+                    <li class="{{ Request::segment(2) === 'offline' ? 'active' : null }}"><a href="{{route('auth.offline')}}">Page Offline</a></li>
                 </ul>
             </li>
             <li class="{{ Request::segment(1) === 'pages' ? 'active open open_top' : null }}">

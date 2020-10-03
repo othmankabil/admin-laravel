@@ -1,6 +1,6 @@
 @extends('layout.master')
-@section('title', 'Ajouter Offre')
-@section('parentPageTitle', 'offres')
+@section('title', 'Modifier Offre')
+@section('parentPageTitle', 'sales')
 @section('page-style')
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-select/css/bootstrap-select.css')}}"/>
@@ -10,14 +10,14 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
                 <div class="header">
-                    <h2><strong>Ajouter</strong> Offre</h2>
+                    <h2><strong>Modifier</strong> Offre</h2>
 
                 </div>
                 <div class="body">
                     <form id="form_validation" method="POST">
-                        <h2 class="card-inside-title">Offre</h2>
-                        <div class="form-group form-float" >
-                                <select class="form-control show-tick" required>
+
+                        <div class="form-group form-float">
+                                <select class="form-control show-tick">
                                     <option value="">-- select Offre--</option>
                                     <option value="10">10</option>
                                     <option value="20">20</option>
@@ -27,11 +27,10 @@
                                 </select>
                         </div>
                         <div class="form-group form-float">
-                            <h2 class="card-inside-title">Prix</h2>
+                            <div class="help-info">Prix</div>
                             <input type="number" class="form-control" name="number" required>
                         </div>
                         <div class="form-group form-float">
-                            <h2 class="card-inside-title">Note</h2>
                             <textarea name="Note" cols="30" rows="5" placeholder="Note" class="form-control no-resize" required></textarea>
                         </div>
 
