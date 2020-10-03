@@ -146,8 +146,8 @@ Route::resource('users','UsersController');
 Route::get('users/{user}/delete','UsersController@delete')->name('users.delete');
 
 /* Prouit */
-Route::get('produit', function (){ return view('produit.index'); })->name('produit.index');
-Route::get('produit/create', function (){ return view('produit.create'); })->name('produit.create');
-Route::get('produit/edite', function (){ return view('produit.edite'); })->name('produit.edite');
+Route::resource('produits','ProduitsController');
+Route::get('produits/{produit}/delete','ProduitsController@delete')->name('produits.delete');
+
 
 
