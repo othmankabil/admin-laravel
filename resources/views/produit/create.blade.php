@@ -1,12 +1,12 @@
 @extends('layout.master')
-@section('title', 'Modifier Produit')
+@section('title', 'Ajouter Produit')
 @section('parentPageTitle', 'Produit')
 @section('content')
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="card">
                 <div class="header">
-                    <h2><strong>Modifier</strong> Offre</h2>
+                    <h2><strong>Ajouter</strong> Offre</h2>
 
                 </div>
                 <div class="body">
